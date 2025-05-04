@@ -200,12 +200,20 @@ void showFinalGameResults(stGameResults gameResults)
 	getscreencolor(gameResults.gamewinner);
 }
 
+void resetScreen()
+{
+	system("cls");
+	system("color 0F");
+}
+
 void startgame()
 {
 	char playagain = 'Y';
 
 	do
 	{
+
+		resetScreen();
 		stGameResults gameResults = playgame(howManyRounds());
 		showgameoverscreen();
 		showFinalGameResults(gameResults);
