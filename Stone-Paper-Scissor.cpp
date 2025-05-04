@@ -47,7 +47,7 @@ int randomnumber(int from, int to)
 	return randnum;
 }
 
-int howManyRounds()
+short howManyRounds()
 {
 	short rounds;
 	do
@@ -111,6 +111,7 @@ string getchoice(enGameChoice gameChoice)
 
 void printRoundResults(stRoundInfo roundInfo)
 {
+	cout << "-------------------------Round" << roundInfo.roundnumber << "-------------------\n\n";
 	cout << "Player Choice :" << getchoice(roundInfo.playerchoice) << endl;
 	cout << "Computer Choice :" << getchoice(roundInfo.computerchoice) << endl;
 	cout << "Round Winner :" << roundInfo.winnername << endl;
@@ -131,10 +132,10 @@ enWinner whoWonTheGame( short playerwintimes, short computerwintimes)
 		return enWinner::Draw;
 }
 
-stGameResults fillgameresults(short howmanyrounds, short playerwintimes, short computerwintimes, short drawtimes)
+stGameResults fillgameresults(short gameRounds, short playerwintimes, short computerwintimes, short drawtimes)
 {
 	stGameResults gameResults;
-	gameResults.gamerounds = howmanyrounds;
+	gameResults.gamerounds = gameRounds;
 	gameResults.playerwintimes = playerwintimes;
 	gameResults.computerwintimes = computerwintimes;
 	gameResults.drawtimes = drawtimes;
@@ -152,7 +153,7 @@ stGameResults playgame(short howmanyrounds)
 
 	for (int gamerounds = 1; gamerounds <= howmanyrounds; gamerounds++)
 	{
-		cout << "\n-----------------------Round[" << gamerounds << "] -----------------------------\n";
+		cout << "\n---------------------Round[" << gamerounds << "] begins -----------------------------\n";
 		roundInfo.roundnumber = gamerounds;
 		roundInfo.playerchoice = readPlayerChoice();
 		roundInfo.computerchoice = getComputerChoice();
