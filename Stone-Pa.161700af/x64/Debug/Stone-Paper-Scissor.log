@@ -1,0 +1,3 @@
+﻿  Stone-Paper-Scissor.cpp
+C:\Users\as146\source\repos\Stone-Paper-Scissor\Stone-Paper-Scissor.cpp(96,1): warning C4715: 'whoWonTheRound': not all control paths return a value
+  Stone-Paper-Scissor.vcxproj -> C:\Users\as146\source\repos\Stone-Paper-Scissor\x64\Debug\Stone-Paper-Scissor.exe
